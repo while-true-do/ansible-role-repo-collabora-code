@@ -1,0 +1,23 @@
+---
+# tasks/CentOS.yml for repo_collabora_code
+
+- name: Add key for repository Collabora Online CODE
+  rpm_key:
+    state: "{{ wtd_repo_collabora_code_state }}"
+    key: https://www.collaboraoffice.com/repos/CollaboraOnline/CODE-centos7/repodata/repomd.xml.key
+
+- name: Add repository Collabora Online CODE
+  yum_repository:
+    name: Collabora Online CODE
+    description: Collabora Online CODE
+    file: collabora-online-code
+    baseurl: "https://www.collaboraoffice.com/repos/CollaboraOnline/CODE-centos7"
+    gpgcheck: yes
+    gpgkey: https://www.collaboraoffice.com/repos/CollaboraOnline/CODE-centos7/repodata/repomd.xml.key
+    state: "{{ wtd_repo_collabora_code_state }}"
+
+- name: Activate cleanup handler
+  command: "true"
+  notify:
+    - Cleanup yum metadata
+  when: wtd_repo_collabora_code_state != "present"

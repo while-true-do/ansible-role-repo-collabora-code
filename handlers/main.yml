@@ -1,2 +1,7 @@
 ---
 # handlers/main.yml for repo_collabora_code
+
+- name: Cleanup yum metadata
+  command: yum clean metadata
+  args:
+    warn: no

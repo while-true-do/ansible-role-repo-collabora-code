@@ -1,9 +1,5 @@
 ---
 # defaults/main.yml for repo_collabora_code
-#
-# All Variables must be prefixed with "wtd_":
-#
-# - wtd_my_cool_variable: "foo"
-# - wtd_another_variable: "bar"
-#
-# If a variable needs explanation, it should be done here.
+
+# repository state can be set to "present" / "absent"
+wtd_repo_collabora_code_state: "present"
