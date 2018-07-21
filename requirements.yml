@@ -1,5 +1,5 @@
-# from galaxy
-# - src: while_true_do.yum
+# Install while_true_do.yum from galaxy
+- src: while_true_do.yum
 
 # from GitHub
 # - src: https://github.com/while-true-do/ansible-role-yum

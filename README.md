@@ -32,16 +32,15 @@ Used Modules:
 
 ## Dependencies
 
-<!--
-Describe, if other roles are needed and link them here.
-You also have to put the dependencies in the requirements.yml.
+This role has the below dependencies:
+
+-   <https://galaxy.ansible.com/while_true_do/yum>
+
+You can install them with:
 
 ```
 ansible-galaxy install -r requirements.yml
 ```
-
-If nothing is needed, please write "None."
--->
 
 ## Role Variables
 
