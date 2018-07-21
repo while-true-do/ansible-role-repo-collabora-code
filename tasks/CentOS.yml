@@ -15,6 +15,7 @@
   rpm_key:
     state: "{{ wtd_repo_collabora_code_state }}"
     key: https://www.collaboraoffice.com/repos/CollaboraOnline/CODE-centos7/repodata/repomd.xml.key
+  become: yes
 
 - name: "{{ wtd_repo_collabora_code_task_name }} repository Collabora Online CODE"
   yum_repository:
@@ -25,6 +26,7 @@
     gpgcheck: yes
     gpgkey: https://www.collaboraoffice.com/repos/CollaboraOnline/CODE-centos7/repodata/repomd.xml.key
     state: "{{ wtd_repo_collabora_code_state }}"
+  become: yes
 
 - name: Activate cleanup handler
   command: "true"
