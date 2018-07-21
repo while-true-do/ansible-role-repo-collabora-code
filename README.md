@@ -1,16 +1,11 @@
-[![Build Status](https://travis-ci.org/while-true-do/ansible-role-repo_collabora_code.svg?branch=master)](https://travis-ci.org/while-true-do/ansible-role-repo_collabora_code)
+[![Build Status](https://travis-ci.org/while-true-do/ansible-role-repo-collabora-code.svg?branch=master)](https://travis-ci.org/while-true-do/ansible-role-repo-collabora-code)
 
-# Ansible Role: repo_collabora_code
-| A short description **what** the role does goes here.
-
-<!--
--  Explain a bit more, if needed.
--  You can use bullets or write a small text
--->
+# Ansible Role: repo-collabora-code
+| A role that installs the yum repository for Collabora Online - CODE from official collaboraoffice.com
 
 ## Motivation
 
-<!-- Explain a bit **why** this role is needed. -->
+This role is needed to provide the Collabora Online - CODE packages.
 
 ## Installation
 
@@ -20,18 +15,20 @@ Install from [Ansible Galaxy](https://galaxy.ansible.com/while_true_do/repo_coll
 ansible-galaxy install while_true_do.repo_collabora_code
 ```
 
-Install from [Github](https://github.com/while-true-do/ansible-role-repo_collabora_code)
+Install from [Github](https://github.com/while-true-do/ansible-role-repo-collabora-code)
 
 ```
-git clone https://github.com/while-true-do/ansible-role-repo_collabora_code.git while_true_do.repo_collabora_code
+git clone https://github.com/while-true-do/ansible-role-repo-collabora-code.git while_true_do.repo_collabora_code
 ```
 
 ## Requirements
 
 Used Modules:
 
--   [module1](link)
--   [module2](link)
+-   [command_module](https://docs.ansible.com/ansible/latest/modules/command_module.html)
+-   [include_tasks_module](https://docs.ansible.com/ansible/latest/modules/include_tasks_module.html)
+-   [rpm_key_module](https://docs.ansible.com/ansible/latest/modules/rpm_key_module.html)
+-   [yum_repository_module](https://docs.ansible.com/ansible/latest/modules/yum_repository_module.html)
 
 ## Dependencies
 
@@ -48,19 +45,11 @@ If nothing is needed, please write "None."
 
 ## Role Variables
 
-<!--
-The variable files should explain itself and pasted/linked here.
-Explanation should be done **in** the files, if needed.
--->
-
 ```yaml
-# defaults/main.yml
-foo: bar
-```
+# defaults/main.yml for repo_collabora_code
 
-```yaml
-# vars/main.yml
-bar: foo
+# repository state can be set to "present" / "absent"
+wtd_repo_collabora_code_state: "present"
 ```
 
 ## Example Playbook
@@ -78,7 +67,7 @@ Advanced Example:
 ```yaml
 - hosts: servers
   roles:
-    - { role: while_true_do.repo_collabora_code, foo: bar, bar: foo }
+    - { role: while_true_do.repo_collabora_code, wtd_repo_collabora_code_state: "absent" }
 ```
 
 ## Testing
@@ -88,8 +77,9 @@ All tests are located in [test directory](./tests/).
 Basic testing:
 
 ```
-bash ./tests/test-spelling.sh
 bash ./tests/test-ansible.sh
+bash ./tests/test-spelling.sh
+bash ./tests/test-whitespace.sh
 ```
 
 ## Contribute / Bugs
@@ -100,8 +90,8 @@ at the links first.
 
 -   [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
 -   [Contribution Guidelines](./docs/CONTRIBUTING.md)
--   [Create an issue or Request](https://github.com/while-true-do/ansible-role-repo_collabora_code/issues)
--   [See who was contributing already](https://github.com/while-true-do/ansible-role-repo_collabora_code/graphs/contributors)
+-   [Create an issue or Request](https://github.com/while-true-do/ansible-role-repo-collabora-code/issues)
+-   [See who was contributing already](https://github.com/while-true-do/ansible-role-repo-collabora-code/graphs/contributors)
 
 ## License
 
