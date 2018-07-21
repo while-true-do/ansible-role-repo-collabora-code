@@ -19,7 +19,7 @@
 
 - name: "{{ wtd_repo_collabora_code_task_name }} repository Collabora Online CODE"
   yum_repository:
-    name: Collabora Online CODE
+    name: Collabora-Online-CODE
     description: Collabora Online CODE
     file: collabora-online-code
     baseurl: "https://www.collaboraoffice.com/repos/CollaboraOnline/CODE-centos7"
